@@ -1,0 +1,10 @@
+.sentenceContainer{
+    background-color: #333;
+    border: 1px solid #111;
+}
+
+.sentenceContent {
+    color: #fff;
+    background-color: #333;
+    margin: 0px;
+}
