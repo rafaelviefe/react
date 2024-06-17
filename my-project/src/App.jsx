@@ -1,6 +1,6 @@
 import './App.css';
-import HelloWorld from './components/HelloWorld';
 import SayMyName from './components/SayMyName';
+import Person from './components/Person';
 
 function App() {
 
@@ -8,10 +8,15 @@ function App() {
 
   return (
     <div className="App">
-      <HelloWorld/>
       <SayMyName name="Rafael"/>
       <SayMyName name="Jonathan"/>
       <SayMyName name={name}/>
+      <Person
+      name="Rodrygo"
+      age= "28"
+      occupation="Freelancer"
+      photo="https://via.placeholder.com/150"
+      />
     </div>
   );
 }
