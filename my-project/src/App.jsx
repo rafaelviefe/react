@@ -2,6 +2,7 @@ import './App.css';
 import SayMyName from './components/SayMyName';
 import Person from './components/Person';
 import Sentence from './components/Sentence';
+import List from './components/List';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       occupation="Freelancer"
       photo="https://via.placeholder.com/150"
       />
+      <List/>
     </div>
   );
 }
