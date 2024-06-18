@@ -1,13 +1,11 @@
 import './App.css';
-import Event from './components/Event';
-import Form from './components/Forms';
+import Conditional from './components/Conditional';
 
 function App() {
   return (
     <div className="App">
-      <h1>Testing Events</h1>
-      <Event/>
-      <Form/>
+      <h1>Conditional Rendering</h1>
+      <Conditional/>
     </div>
   );
 }
