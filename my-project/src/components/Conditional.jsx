@@ -17,7 +17,7 @@ const [userEmail, setUserEmail] = useState()
     return(
         <div>
             <h2>Register your e-mail:</h2>
-            <form action="">
+            <form>
                 <input type="email" placeholder="Write your e-mail..." onChange={(e)=> setEmail(e.target.value)}/>
                 <button onClick={sendEmail}>
                     Send e-mail
