@@ -1,7 +1,7 @@
 .container{
-    width: 1200px;
+    width: 95vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 auto;
     flex-wrap: wrap;
 }

@@ -12,11 +12,13 @@
 }
 
 .item{
-    margin-right: 1em;
+    margin-right: 1.2em;
+    font-size: large;
 }
 
 .item a{
     color: #EEE;
+    padding: 9px 0;
     text-decoration: none;
 }
 
