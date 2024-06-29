@@ -65,9 +65,10 @@ function Project(){
     }
 
     function createService () {
+        setMessage('')
         
         // last service
-        const lastService = project.services[project.services.length -1]
+        const lastService = project.services[project.services.length - 1]
 
         lastService.id = uuidv4()
 
@@ -76,7 +77,6 @@ function Project(){
         const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
 
         // maximum value validation
-
         if(newCost > parseFloat(project.budget)) {
             setMessage('Orçamento ultrapassado, verifique o valor do serviço.')
             setType('error')
@@ -84,6 +84,22 @@ function Project(){
             return false
         }
 
+        // add service cost to project total cost
+        project.cost = newCost
+
+        // update project
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                //exibir os serviços
+            })
+            .catch(err => console.log(err))
     }
 
     function toggleProjectForm() {
@@ -92,7 +108,6 @@ function Project(){
     
     function toggleServiceForm() {
         setShowServiceForm(!showServiceForm)
-        console.log(project)
     }
 
     return (
@@ -141,9 +156,9 @@ function Project(){
                         <div className={styles.project_info}>
                             {showServiceForm && (
                                 <ServiceForm
+                                    projectData={project}
                                     handleSubmit={createService}
                                     btnText="Adicionar serviço"
-                                    projecData={project}
                                 />
                             )}
                         </div>
