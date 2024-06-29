@@ -1,4 +1,4 @@
-import styles from './Projeto.module.css'
+import styles from './Project.module.css'
 
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -7,6 +7,7 @@ import Loading from '../layout/Loading'
 import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../project/ProjectForm'
+import ProjectInfo from '../layout/ProjectInfo'
 
 function Project(){
 
@@ -81,15 +82,20 @@ function Project(){
                         </button>
                         {!showProjectForm ? (
                             <div className={styles.project_info}>
-                                <p>
-                                    <span>Categoria:</span> {project.category.name}
-                                </p>
-                                <p>
-                                    <span>Total de Orçamento:</span> R${project.budget}
-                                </p>
-                                <p>
-                                    <span>Total Utilizado:</span> R${project.cost}
-                                </p>
+                                <ProjectInfo
+                                    info="Categoria"
+                                    value={project.category.name}
+                                />
+                                <ProjectInfo
+                                    info="Total de Orçamento"
+                                    value={project.budget}
+                                    priceable="R$"
+                                />
+                                <ProjectInfo
+                                    info="Total Utilizado"
+                                    value={project.cost}
+                                    priceable="R$"
+                                />
                             </div>
                         ) : (
                             <div className={styles.project_info}>
