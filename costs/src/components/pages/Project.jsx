@@ -8,6 +8,7 @@ import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../project/ProjectForm'
 import ProjectInfo from '../layout/ProjectInfo'
+import ServiceForm from '../service/ServiceForm'
 
 function Project(){
 
@@ -59,6 +60,10 @@ function Project(){
                 setMessage('Projeto atualizado!')
                 setType('success')
             })
+    }
+
+    function createService () {
+        console.log()
     }
 
     function toggleProjectForm() {
@@ -114,7 +119,11 @@ function Project(){
                         </button>
                         <div className={styles.project_info}>
                             {showServiceForm && (
-                                <div>formulário do serviço</div>
+                                <ServiceForm
+                                    handleSubmit={createService}
+                                    btnText="Adicionar serviço"
+                                    projecData={project}
+                                />
                             )}
                         </div>
                     </div>
