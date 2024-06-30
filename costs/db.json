@@ -8,15 +8,8 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 252,
-      "services": [
-        {
-          "name": "Rafolas",
-          "cost": "200",
-          "description": "Faz algo",
-          "id": "5f20488a-0375-4d2a-af9b-e8167ada7584"
-        }
-      ]
+      "cost": 52,
+      "services": []
     }
   ],
   "categories": [
